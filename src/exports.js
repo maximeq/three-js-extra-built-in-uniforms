@@ -8,11 +8,14 @@ if(THREE.REVISION !== "101"){
 var ExtraBuiltInUniforms = {
     viewMatrixInverse : true,
     projectionMatrixInverse : true,
-    originalWebGLRenderer : THREE.WebGLRenderer
+    originalWebGLRenderer : THREE.WebGLRenderer,
+    patchedWebGLRenderer : require("./PatchedWebGLRenderer")
 };
 
 // Overwrite the WebGLRenderer
-THREE.WebGLRenderer = require("./PatchedWebGLRenderer");
+THREE.WebGLRenderer = ExtraBuiltInUniforms.patchedWebGLRenderer;
+
+THREE.ExtraBuiltInUniforms = ExtraBuiltInUniforms;
 
 module.exports = ExtraBuiltInUniforms;
 

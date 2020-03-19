@@ -2669,11 +2669,14 @@
 	var ExtraBuiltInUniforms = {
 	    viewMatrixInverse : true,
 	    projectionMatrixInverse : true,
-	    originalWebGLRenderer : threeFull.WebGLRenderer
+	    originalWebGLRenderer : threeFull.WebGLRenderer,
+	    patchedWebGLRenderer : PatchedWebGLRenderer
 	};
 
 	// Overwrite the WebGLRenderer
-	threeFull.WebGLRenderer = PatchedWebGLRenderer;
+	threeFull.WebGLRenderer = ExtraBuiltInUniforms.patchedWebGLRenderer;
+
+	threeFull.ExtraBuiltInUniforms = ExtraBuiltInUniforms;
 
 	var exports$1 = ExtraBuiltInUniforms;
 
