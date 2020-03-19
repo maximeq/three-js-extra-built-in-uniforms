@@ -2674,6 +2674,7 @@
 
 	// Overwrite the WebGLRenderer
 	threeFull.WebGLRenderer = PatchedWebGLRenderer;
+	threeFull.ExtraBuiltInUniforms = ExtraBuiltInUniforms;
 
 	var exports$1 = ExtraBuiltInUniforms;
 

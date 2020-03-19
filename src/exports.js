@@ -13,6 +13,7 @@ var ExtraBuiltInUniforms = {
 
 // Overwrite the WebGLRenderer
 THREE.WebGLRenderer = require("./PatchedWebGLRenderer");
+THREE.ExtraBuiltInUniforms = ExtraBuiltInUniforms;
 
 module.exports = ExtraBuiltInUniforms;
 
